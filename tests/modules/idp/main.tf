@@ -15,7 +15,7 @@ terraform {
 
 module "idp_htp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
   name = "htp-idp"
@@ -23,14 +23,14 @@ module "idp_htp" {
   htpasswd_idp_users = [
     {
       username = "radtriste",
-      password = "anything232&^R"
+      password = "anything232&^R" # notsecret
     }
   ]
 }
 
 module "gh_htp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
   name = "gh-idp"
@@ -43,7 +43,7 @@ module "gh_htp" {
 
 module "gl_htp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
   name = "gl-idp"
@@ -56,7 +56,7 @@ module "gl_htp" {
 
 module "go_htp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
   name = "go-idp"
@@ -69,7 +69,7 @@ module "go_htp" {
 
 module "ldp_htp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
   name = "ldp-idp"
@@ -82,7 +82,7 @@ module "ldp_htp" {
 
 # module "oid_htp" {
 #   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-#   version = "1.6.2-prerelease.3"
+#   version = "1.6.2"
 
 #   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
 #   name = "oid-idp"

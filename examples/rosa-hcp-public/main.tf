@@ -8,7 +8,7 @@ locals {
 ############################
 module "hcp" {
   source = "terraform-redhat/rosa-hcp/rhcs"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_name           = var.cluster_name
   openshift_version      = var.openshift_version
@@ -25,12 +25,34 @@ module "hcp" {
   operator_role_prefix  = local.operator_role_prefix
 }
 
+module "mp" {
+  source = "terraform-redhat/rosa-hcp/rhcs//modules/machine-pool"
+  version = "1.6.2"
+
+  cluster_id = module.hcp.cluster_id
+
+  autoscaling = {
+    enabled = false
+    min_replicas = null
+    max_replicas = null
+  }
+  replicas = 2
+  auto_repair = true
+  name = "mp2"
+  openshift_version = var.openshift_version
+  subnet_id = module.vpc.private_subnets[0]
+  aws_node_pool = {
+    instance_type = "m5.xlarge"
+    tags = {}
+  }
+}
+
 ############################
 # HTPASSWD IDP
 ############################
 module "htpasswd_idp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/idp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id         = module.hcp.cluster_id
   name               = "htpasswd-idp"
@@ -52,7 +74,7 @@ resource "random_password" "password" {
 ############################
 module "vpc" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/vpc"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   name_prefix              = var.cluster_name
   availability_zones_count = 3
