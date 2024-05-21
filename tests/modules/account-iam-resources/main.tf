@@ -15,7 +15,7 @@ terraform {
 
 module "iam_resources" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/account-iam-resources"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   account_role_prefix = "tr-mod"
   path = "/tr-mod/"

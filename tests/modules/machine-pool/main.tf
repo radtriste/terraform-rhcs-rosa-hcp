@@ -15,7 +15,7 @@ terraform {
 
 module "mp" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/machine-pool"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_id = "2b9md84ql2ho313fogugjjvqert1nioe"
   name = "np0"

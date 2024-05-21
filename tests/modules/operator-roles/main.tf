@@ -15,7 +15,7 @@ terraform {
 
 module "operator_roles" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/operator-roles"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
   
   oidc_endpoint_url = "oidc.os1.devshift.org/2bgv9kpq2o8lteqg5mvq657bsr1t8gi6"
   operator_role_prefix = "tr-mod"

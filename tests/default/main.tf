@@ -15,5 +15,5 @@ terraform {
 
 locals {
   source = "terraform-redhat/rosa-hcp/rhcs"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 }

@@ -15,7 +15,7 @@ terraform {
 
 module "vpc" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/vpc"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   name_prefix = "tr-mod"
   availability_zones_count = "3"

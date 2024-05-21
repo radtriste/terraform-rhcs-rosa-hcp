@@ -15,7 +15,7 @@ terraform {
 
 module "cluster" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/rosa-cluster-hcp"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   cluster_name = "tr-mod"
   oidc_config_id = "2bgv9kpq2o8lteqg5mvq657bsr1t8gi6"

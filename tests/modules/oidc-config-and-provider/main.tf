@@ -15,7 +15,7 @@ terraform {
 
 module "oidc" {
   source = "terraform-redhat/rosa-hcp/rhcs//modules/oidc-config-and-provider"
-  version = "1.6.2-prerelease.3"
+  version = "1.6.2"
 
   # installer_role_arn = "arn:aws:iam::301721915996:role/tr-mod/tr-mod-HCP-ROSA-Installer-Role"
   # managed = false
